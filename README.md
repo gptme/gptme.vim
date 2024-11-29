@@ -19,7 +19,7 @@ The plugin assumes you have [gptme][gptme] installed and available in your PATH.
 
 Add this to your `.vimrc`:
 
-    Plug 'ErikBjare/gptme', { 'rtp': 'scripts/vim' }
+    Plug 'ErikBjare/gptme.vim'
 
 Then run:
 
