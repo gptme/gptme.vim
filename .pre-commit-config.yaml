@@ -1,0 +1,10 @@
+repos:
+-   repo: local
+    hooks:
+    -   id: nvim-startup-check
+        name: Check Neovim startup
+        entry: bash -c 'nvim --headless +qa 2>&1 | grep "Error\\|E[0-9]\\+:" && exit 1 || exit 0'
+        language: system
+        pass_filenames: false
+        types: [text]
+        verbose: true
