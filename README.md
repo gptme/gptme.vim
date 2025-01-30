@@ -48,6 +48,18 @@ Set the number of context lines to include before and after cursor (default: 3):
 
     let g:gptme_context_lines = 5
 
+### Terminal Window Position
+
+Configure how the terminal window opens (default: auto-detected based on window width):
+
+    let g:gptme_terminal_position = 'vertical'  " or 'horizontal'
+
+### Terminal Window Size
+
+Set the size of the terminal window in columns (vertical) or lines (horizontal):
+
+    let g:gptme_terminal_size = 80  " default: 80 columns for vertical, 15 lines for horizontal
+
 ### Key Mappings
 
 Disable default key mappings:
