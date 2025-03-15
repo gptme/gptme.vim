@@ -42,6 +42,20 @@ if !exists('g:gptme_terminal_size')
 endif
 
 function! s:gptme() range
+    " Check if the buffer has unsaved changes
+    if &modified
+        let l:choice = confirm("File has unsaved changes. Save before running gptme?", "&Yes\n&No\n&Cancel", 1)
+        if l:choice == 1
+            " User chose to save
+            write
+        elseif l:choice == 3
+            " User chose to cancel
+            echo "gptme operation cancelled"
+            return
+        endif
+        " If choice == 2, continue without saving
+    endif
+
     " Check if range was given (visual selection)
     let l:has_range = a:firstline != a:lastline
 
