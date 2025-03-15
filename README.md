@@ -70,6 +70,31 @@ If you disable the default mappings, you can set your own:
 
     nnoremap <Leader>G :Gptme<CR>
 
+## Development
+
+If you're working on improving this plugin, you can use your development version instead of the installed version:
+
+### Option 1: Start Vim with the dev version
+
+```shell
+vim -c "set runtimepath+=/path/to/your/gptme.vim"
+```
+
+This adds the development directory to Vim's runtime path for that session only.
+
+### Option 2: Modify your plugin manager configuration
+
+If you're using vim-plug, you can temporarily modify your `.vimrc`:
+
+```vim
+" Comment out the GitHub version
+" Plug 'ErikBjare/gptme.vim'
+" Add the local version
+Plug '~/path/to/your/gptme.vim'
+```
+
+Then run `:PlugUpdate` to use the local version.
+
 ## License
 
 Same as Vim itself - see `:help license`
