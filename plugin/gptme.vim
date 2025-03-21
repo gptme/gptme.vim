@@ -113,6 +113,7 @@ function! s:gptme() range
     setlocal winfixheight
     setlocal nofoldenable
     setlocal bufhidden=hide
+    setlocal nobuflisted
 
     " Use appropriate terminal function based on Vim/Neovim
     if has('nvim')
