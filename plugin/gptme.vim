@@ -118,10 +118,20 @@ function! s:gptme() range
     " Use appropriate terminal function based on Vim/Neovim
     if has('nvim')
         call termopen(l:cmd)
+        " Set up terminal-specific keymaps for scrolling
+        tnoremap <buffer> <PageUp> <C-\><C-n><C-u>i
+        tnoremap <buffer> <PageDown> <C-\><C-n><C-d>i
+        tnoremap <buffer> <S-PageUp> <C-\><C-n><C-b>i
+        tnoremap <buffer> <S-PageDown> <C-\><C-n><C-f>i
         " Auto-enter insert mode in terminal (Neovim)
         startinsert
     else
         call term_start(l:cmd, {'curwin': 1})
+        " Set up terminal-specific keymaps for scrolling in Vim
+        tnoremap <buffer> <PageUp> <C-W>N<C-u><C-W>p
+        tnoremap <buffer> <PageDown> <C-W>N<C-d><C-W>p
+        tnoremap <buffer> <S-PageUp> <C-W>N<C-b><C-W>p
+        tnoremap <buffer> <S-PageDown> <C-W>N<C-f><C-W>p
     endif
 endfunction
 
